@@ -1,0 +1,27 @@
+﻿<h3>Cart div</h3>
+<h2>Count : {{ data.order.items.length}}</h2>
+<h2>Subtotal : {{ data.order.subtotal}}</h2>
+
+<div>
+    <table class="table table-active table-bordered">
+        <thead>
+            <tr>
+                <td>Product</td>
+                <td>Quntity</td>
+                <td>Price</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let o of data.order.items">
+            <tr>
+                <td>{{o.productCategory}}-{{o.productTitle}}</td>
+                <td>{{o.quantity}}</td>
+                <td>{{o.unitPrice | currency:"USD":true}}</td>
+                <td>{{(o.quantity*o.unitPrice) | currency:"USD":true}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <button routerLink="checkout" class="btn btn-success" *ngIf="data.order.items.length>0" (click)="OnCheckout()">checkout</button>
+
+</div>

@@ -1,0 +1,14 @@
+{
+  "MyKey": "This is My Key",
+  "ConnectionStrings": {
+    "Webapplication1DBConnection": "server=(localdb)\\\\MSSQLLocalDB;Database=Webapplication1DB;Integrated Security=True;"
+  }
+  "Logging": {
+    "LogLevel": {
+
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+
+  }
+}

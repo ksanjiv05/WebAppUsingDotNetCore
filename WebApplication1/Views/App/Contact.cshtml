@@ -1,0 +1,45 @@
+﻿@*@model ViewContactModel*@
+@model WebApplication1.ViewModel.ViewConatctModel
+@section Scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
+<div class="col-md-6 offset-md-3">
+    
+    <div class="card card-body bg-light">
+    <div class="bg-success"><span class="text-light">@ViewBag.Message</span></div>
+    <form method="post" >
+
+        @*<div asp-validation-summary="All"></div>*@
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="md-form">
+            <label class="col-form-label" asp-for="Email">Your Email :</label><br>
+            <input type="email" asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        
+        <br>
+        <div class="md-form">
+            <label asp-for="Title">Your Title :</label><br>
+            <input type="text" asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <br>
+        <div class="md-form">
+            <label asp-for="Message">Message :</label><br>
+            <textarea rows="5" class="form-control" name="Message">
+    
+             </textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+        <br /><br>
+        <div class="md-form">
+            <button type="submit" class="form-control btn btn-success"><i class="fal fa-envelope"></i>submit</button>
+            
+            
+        </div>
+    </form>
+    </div>
+</div>
